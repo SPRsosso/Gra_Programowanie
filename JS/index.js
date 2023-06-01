@@ -1,13 +1,28 @@
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
-
 canvas.height = innerHeight;
 canvas.width = innerWidth;
 
-const frames = 60;
-const fps = 1000 / frames;
+const scientist = new Scientist(40, 700, 30, 70);
 
 let gameLoop = setInterval(() => {
     c.fillStyle = "black";
     c.fillRect(0, 0, canvas.width, canvas.height);
+
+    scientist.update();
+    scientist.draw();
+
+    console.log(movement);
 }, fps);
+
+addEventListener("keydown", e => {
+    if (e.key == "d")
+        movement[RIGHT] = RIGHT;
+    else if (e.key == "a")
+        movement[LEFT] = LEFT;
+})
+
+addEventListener("keyup", e => {
+    if (e.key == "d")
+        delete movement.RIGHT;
+    else if (e.key == "a")
+        delete movement.LEFT;
+})
