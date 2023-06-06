@@ -8,6 +8,9 @@ const playerHeight = 130;
 const playerWidth = 20;
 const speed = 10;
 
+const ballRadius = 10;
+const ballSpeed = 10;
+
 const UP = "UP", DOWN = "DOWN";
 const player1Movement = {};
 const player2Movement = {};

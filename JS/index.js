@@ -3,6 +3,7 @@ canvas.height = innerHeight;
 
 let player1 = new Player(20, (innerHeight / 2) - (playerHeight / 2), playerWidth, playerHeight);
 let player2 = new Player(innerWidth - (20 + playerWidth), (innerHeight / 2) - (playerHeight / 2), playerWidth, playerHeight);
+let ball = new Ball((innerWidth / 2) - (ballRadius / 2), (innerHeight / 2) - (ballRadius / 2), ballRadius);
 
 c.fillStyle = "black";
 c.fillRect(0, 0, innerWidth, innerHeight);
@@ -24,6 +25,7 @@ let game = setInterval(() => {
     
     player1.draw();
     player2.draw();
+    ball.draw();
 }, fps);
 
 addEventListener("keydown", e => {
