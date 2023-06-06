@@ -12,3 +12,25 @@
 body {
     overflow: hidden;
 }
+
+#score {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#score h1 {
+    font-size: 36px;
+}
+
+#score .border {
+    width: 3px;
+    height: 50px;
+    background-color: white;
+    margin: 10px;
+}

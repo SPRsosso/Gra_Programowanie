@@ -14,3 +14,8 @@ const ballSpeed = 10;
 const UP = "UP", DOWN = "DOWN";
 const player1Movement = {};
 const player2Movement = {};
+
+const scoreP1Box = document.querySelector("#score-p1");
+const scoreP2Box = document.querySelector("#score-p2");
+let scoreP1 = 0;
+let scoreP2 = 0;

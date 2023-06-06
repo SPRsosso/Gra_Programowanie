@@ -8,6 +8,8 @@ let ball = new Ball((innerWidth / 2) - (ballRadius / 2), (innerHeight / 2) - (ba
 c.fillStyle = "black";
 c.fillRect(0, 0, innerWidth, innerHeight);
 
+
+// Game loop
 let game = setInterval(() => {
     c.fillStyle = "rgba(0, 0, 0, 0.2)";
     c.fillRect(0, 0, innerWidth, innerHeight);
@@ -25,9 +27,15 @@ let game = setInterval(() => {
     
     player1.draw();
     player2.draw();
+    ball.update();
     ball.draw();
+
+    scoreP1Box.innerHTML = scoreP1;
+    scoreP2Box.innerHTML = scoreP2;
 }, fps);
 
+
+// Movement listeners
 addEventListener("keydown", e => {
     if (e.key == "w")
         player1Movement[UP] = UP;
