@@ -5,10 +5,6 @@ class Ball {
         this.radius = radius;
     }
 
-    update() {
-        
-    }
-
     draw() {
         c.beginPath();
         c.fillStyle = "white";
