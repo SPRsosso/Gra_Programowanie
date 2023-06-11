@@ -1,6 +1,7 @@
 * {
     margin: 0;
     font-family: monospace;
+    
 }
 
 *,
@@ -11,7 +12,17 @@
 
 body {
     overflow: hidden;
+    background-image: url('../IMG/pongmenu.jpg');
+    background-size: cover;
 }
+
+#menuButton{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 #score {
     position: absolute;
@@ -34,3 +45,4 @@ body {
     background-color: white;
     margin: 10px;
 }
+

@@ -1,3 +1,14 @@
+window.onload = menustart();
+
+function menustart(){
+    document.getElementById("coom").style.display = 'none';
+};
+
+function play(){
+    document.getElementById("menuButton").remove();
+    document.getElementById("coom").style.display = 'block';
+};
+
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
