@@ -31,7 +31,7 @@ let game = setInterval(() => {
     //
     // Ball physics
     // 
-
+    ball.update(player1, player2);
     ball.draw();
 
     scoreP1Box.innerHTML = scoreP1;
