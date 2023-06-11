@@ -17,15 +17,15 @@ class Ball {
     
         // Sprawdzenie kolizji z paletkami
         if (
-          this.x - this.radius < player1.x + player1.width &&
+          this.x - this.radius < player1.x + player1.w &&
           this.y + this.radius > player1.y &&
-          this.y - this.radius < player1.y + player1.height
+          this.y - this.radius < player1.y + player1.h
         ) {
           this.dx = -this.dx;
         } else if (
           this.x + this.radius > player2.x &&
           this.y + this.radius > player2.y &&
-          this.y - this.radius < player2.y + player2.height
+          this.y - this.radius < player2.y + player2.h
         ) {
           this.dx = -this.dx;
         }
