@@ -7,6 +7,7 @@ function menustart(){
 function play(){
     document.getElementById("menuButton").remove();
     document.getElementById("coom").style.display = 'block';
+    startGame();
 };
 
 canvas.width = innerWidth;
@@ -21,34 +22,36 @@ c.fillRect(0, 0, innerWidth, innerHeight);
 
 
 // Game loop
-let game = setInterval(() => {
-    c.fillStyle = "rgba(0, 0, 0, 0.2)";
-    c.fillRect(0, 0, innerWidth, innerHeight);
-    // Player 1 movement
-    if (player1Movement.UP && player1.y > 0)
-        player1.y -= speed;
-    else if (player1Movement.DOWN && player1.y + player2.h < innerHeight)
-        player1.y += speed;
-
-    // Player 2 movement
-    if (player2Movement.UP && player2.y > 0)
-        player2.y -= speed;
-    else if (player2Movement.DOWN && player2.y + player2.h < innerHeight)
-        player2.y += speed;
+let game;
+function startGame() {
+    game = setInterval(() => {
+        c.fillStyle = "rgba(0, 0, 0, 0.2)";
+        c.fillRect(0, 0, innerWidth, innerHeight);
+        // Player 1 movement
+        if (player1Movement.UP && player1.y > 0)
+            player1.y -= speed;
+        else if (player1Movement.DOWN && player1.y + player2.h < innerHeight)
+            player1.y += speed;
     
-    player1.draw();
-    player2.draw();
-
-    //
-    // Ball physics
-    // 
-    ball.update(player1, player2);
-    ball.draw();
-
-    scoreP1Box.innerHTML = scoreP1;
-    scoreP2Box.innerHTML = scoreP2;
-}, fps);
-
+        // Player 2 movement
+        if (player2Movement.UP && player2.y > 0)
+            player2.y -= speed;
+        else if (player2Movement.DOWN && player2.y + player2.h < innerHeight)
+            player2.y += speed;
+        
+        player1.draw();
+        player2.draw();
+    
+        //
+        // Ball physics
+        // 
+        ball.update(player1, player2);
+        ball.draw();
+    
+        scoreP1Box.innerHTML = scoreP1;
+        scoreP2Box.innerHTML = scoreP2;
+    }, fps);
+}
 
 // Movement listeners
 addEventListener("keydown", e => {
